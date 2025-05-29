@@ -1,0 +1,12 @@
+---
+- name: Basic Server Setup
+  hosts: local
+  become: yes
+  gather_facts: no
+
+  tasks:
+    - name: Copy the artifact to the deployment directory
+      copy:
+        src: "/home/pranavakp/HelloMaven/target/HelloMaven-1.0-SNAPSHOT.jar"
+        dest: "/opt/deployment/HelloMaven.jar"
+
